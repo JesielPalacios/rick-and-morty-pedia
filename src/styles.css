@@ -10,20 +10,47 @@
   color: #333;
 }
 
-* {
+*, ::after, ::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body{
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
   height: 100vh;
 }
 
 .main-container{
   margin-top: 20px;
 }
+
+/* .jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: 0.3rem;
+  margin: 0 auto;
+  margin-top: 100px !important;
+} */
+
+.jumbotron {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: 0.3rem;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 150px;
+  /* width: fit-content; */
+  width: 115%;
+  transform: translate(-6.5%);
+}
+
+b {
+  font-weight: 600;
+}
+
 
 /* Animaciones */
 .animated {
