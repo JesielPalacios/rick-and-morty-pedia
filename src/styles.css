@@ -25,16 +25,16 @@ body{
   margin-top: 20px;
 }
 
-/* .jumbotron {
+.jumbotron {
   padding: 2rem 1rem;
-  margin-bottom: 2rem;
   background-color: #e9ecef;
   border-radius: 0.3rem;
   margin: 0 auto;
-  margin-top: 100px !important;
-} */
+  margin-top: 100px;
+  /* padding-bottom: 300px; */
+}
 
-.jumbotron {
+/* .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: #e9ecef;
@@ -42,10 +42,10 @@ body{
   margin: 0 auto;
   margin-top: 80px;
   margin-bottom: 150px;
-  /* width: fit-content; */
+  width: fit-content;
   width: 115%;
   transform: translate(-6.5%);
-}
+} */
 
 b {
   font-weight: 600;
