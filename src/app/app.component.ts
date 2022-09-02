@@ -5,13 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-
 export class AppComponent {
   title = 'rickAndMortyPedia';
   menuOptions: Array<any> = [
-    ['home', 'Home'],
+    ['inicio', 'Inicio'],
     ['personaje', 'Personaje'],
-    ['ubicacion', 'Ubicación'],
+    // ['ubicacion', 'Ubicación'],
   ];
 
   ngOnInit(): void {
@@ -21,9 +20,8 @@ export class AppComponent {
     this.title = 'Rick&MortyPedia';
 
     this.menuOptions = new Array<any>(
-      ['home', 'Home'],
+      ['inicio', 'Inicio'],
       ['personajes', 'Personajes']
     );
-
   }
 }
