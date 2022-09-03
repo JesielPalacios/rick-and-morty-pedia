@@ -25,7 +25,9 @@ import {
   CharacterGenderPipe,
   CharacterLastEpisodePipe,
   CharacterEpisodesPipe,
+  CharacterLocationUrlPipe,
 } from './pipes/character-status.pipe';
+import { LocationComponent } from './components/location/location.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import {
     CharacterGenderPipe,
     CharacterLastEpisodePipe,
     CharacterEpisodesPipe,
+    LocationComponent,
+    CharacterLocationUrlPipe,
   ],
   imports: [BrowserModule, APP_ROUTING, HttpClientModule],
   providers: [CharactersService],

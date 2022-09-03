@@ -92,7 +92,7 @@ export class CharacterSpeciesPipe implements PipeTransform {
 })
 export class CharacterLocationPipe implements PipeTransform {
   transform(location: string): string {
-    if (location.toLowerCase() === 'unknown') {
+    if (location === 'unknown') {
       return 'Desconocida🤷🏾‍♂️';
     } else {
       return location;
@@ -105,12 +105,20 @@ export class CharacterLocationPipe implements PipeTransform {
 })
 export class CharacterGenderPipe implements PipeTransform {
   transform(gender: string): string {
-    if (gender.toLowerCase() === 'male') {
+    if (gender === 'Male') {
       return 'Masculino ♂️';
-    } else if (gender.toLowerCase() === 'female') {
+    } else if (gender === 'Female') {
       return 'Femenino ♀️';
     }
     return 'Desconocido🤷🏾‍♂️';
+  }
+}
+
+function getIdFromUrl(url: string): any {
+  if (url.slice(-2).indexOf('/') != -1) {
+    return url.slice(-1);
+  } else {
+    return url.slice(-2);
   }
 }
 
@@ -121,11 +129,7 @@ export class CharacterEpisodesPipe implements PipeTransform {
   transform(episode: any, key: string, episodeId: any): any {
     let _episodeId;
 
-    if (episodeId.slice(-2).indexOf('/') != -1) {
-      _episodeId = episodeId.slice(-1);
-    } else {
-      _episodeId = episodeId.slice(-2);
-    }
+    _episodeId = getIdFromUrl(episodeId);
 
     function transformData(episode: any) {
       switch (key) {
@@ -171,6 +175,19 @@ export class CharacterLastEpisodePipe implements PipeTransform {
       return transformData(_episode);
     } else {
       return transformData(episode);
+    }
+  }
+}
+
+@Pipe({
+  name: 'characterLocationUrl',
+})
+export class CharacterLocationUrlPipe implements PipeTransform {
+  transform(location: string): string {
+    if (location) {
+      return 'ubicacion/' + getIdFromUrl(location);
+    } else {
+      return 'personajes';
     }
   }
 }

@@ -20,12 +20,13 @@
 
       <div class="character-info">
         <span class="subtitle">Última ubicación conocida:</span>
-        <a href="#">{{character.location.name | characterLocation}}</a>
+        <a routerLink="/{{character.location.url | characterLocationUrl}}">{{character.location.name | characterLocation}}</a>
       </div>
 
       <div class="character-info">
         <span class="subtitle">Visto por primera vez en:</span>
-        <a href="#" class="capitalize">{{character.origin.name | characterLocation}}</a>
+        <a routerLink="/{{character.origin.url | characterLocationUrl}}" class="capitalize">{{character.origin.name |
+          characterLocation}}</a>
       </div>
 
       <a routerLink="/personaje/{{character.id}}">

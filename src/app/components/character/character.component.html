@@ -36,12 +36,14 @@
 
           <div class="character-info">
             Última ubicación conocida:
-            <a href="#">{{character.location.name | characterLocation}}</a>
+            <a routerLink="/{{character.location.url | characterLocationUrl}}">{{character.location.name |
+              characterLocation}}</a>
           </div>
 
           <div class="character-info">
             Visto por primera vez en:
-            <a href="#">{{character.origin.name |characterLocation}}</a>
+            <a routerLink="/{{character.origin.url | characterLocationUrl}}" class="capitalize">{{character.origin.name |
+              characterLocation}}</a>
           </div>
 
           <div class="character-info">
