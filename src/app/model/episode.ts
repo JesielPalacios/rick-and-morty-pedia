@@ -1,42 +1,31 @@
 // To parse this data:
 //
-//   import { Convert, Character } from "./file";
+//   import { Convert, Episode } from "./file";
 //
-//   const character = Convert.toCharacter(json);
+//   const episode = Convert.toEpisode(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
-export interface Character {
+export interface Episode {
   id: number;
   name: string;
-  status: string;
-  species: string;
-  type: string;
-  gender: string;
-  origin: Location;
-  location: Location;
-  image: string;
-  episode: string[];
-  lastEpisode: string | null;
+  air_date: string;
+  episode: string;
+  characters: string[];
   url: string;
   created: Date;
-}
-
-export interface Location {
-  name: string;
-  url: string;
 }
 
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-  public static toCharacter(json: string): Character {
-    return cast(JSON.parse(json), r('Character'));
+  public static toEpisode(json: string): Episode {
+    return cast(JSON.parse(json), r('Episode'));
   }
 
-  public static characterToJson(value: Character): string {
-    return JSON.stringify(uncast(value, r('Character')), null, 2);
+  public static episodeToJson(value: Episode): string {
+    return JSON.stringify(uncast(value, r('Episode')), null, 2);
   }
 }
 
@@ -188,27 +177,15 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-  Character: o(
+  Episode: o(
     [
       { json: 'id', js: 'id', typ: 0 },
       { json: 'name', js: 'name', typ: '' },
-      { json: 'status', js: 'status', typ: '' },
-      { json: 'species', js: 'species', typ: '' },
-      { json: 'type', js: 'type', typ: '' },
-      { json: 'gender', js: 'gender', typ: '' },
-      { json: 'origin', js: 'origin', typ: r('Location') },
-      { json: 'location', js: 'location', typ: r('Location') },
-      { json: 'image', js: 'image', typ: '' },
-      { json: 'episode', js: 'episode', typ: a('') },
+      { json: 'air_date', js: 'air_date', typ: '' },
+      { json: 'episode', js: 'episode', typ: '' },
+      { json: 'characters', js: 'characters', typ: a('') },
       { json: 'url', js: 'url', typ: '' },
       { json: 'created', js: 'created', typ: Date },
-    ],
-    false
-  ),
-  Location: o(
-    [
-      { json: 'name', js: 'name', typ: '' },
-      { json: 'url', js: 'url', typ: '' },
     ],
     false
   ),

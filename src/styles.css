@@ -26,11 +26,11 @@ body{
 }
 
 .jumbotron {
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   background-color: #e9ecef;
   border-radius: 0.3rem;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 80px;
   /* padding-bottom: 300px; */
 }
 
@@ -49,6 +49,23 @@ body{
 
 b {
   font-weight: 600;
+}
+
+.status-indicator {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+
+.alive {
+  background-color: rgb(51, 191, 0);
+}
+.dead {
+  background-color: #d63d2e;
+}
+.unknown {
+  background-color: rgb(131, 131, 131);
 }
 
 

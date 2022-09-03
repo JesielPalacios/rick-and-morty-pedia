@@ -93,9 +93,36 @@ export class CharacterSpeciesPipe implements PipeTransform {
 export class CharacterLocationPipe implements PipeTransform {
   transform(location: string): string {
     if (location.toLowerCase() === 'unknown') {
-      return 'Desconocida 🤷🏾‍♂️';
+      return 'Desconocida🤷🏾‍♂️';
     } else {
       return location;
     }
+  }
+}
+
+@Pipe({
+  name: 'characterGender',
+})
+export class CharacterGenderPipe implements PipeTransform {
+  transform(gender: string): string {
+    if (gender.toLowerCase() === 'male') {
+      return 'Masculino🤴🏾';
+    } else if (gender.toLowerCase() === 'female') {
+      return 'Femenino👸🏾';
+    }
+    return 'Desconocido🤷🏾‍♂️';
+  }
+}
+
+@Pipe({
+  name: 'characterEpisodes',
+})
+export class CharacterEpisodesPipe implements PipeTransform {
+  transform(episodes: any): [] {
+    if (episodes.slice(-2).indexOf('/') != -1) {
+      return episodes.slice(-1);
+    }
+
+    return episodes.slice(-2);
   }
 }
