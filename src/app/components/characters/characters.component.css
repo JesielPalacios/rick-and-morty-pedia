@@ -6,6 +6,8 @@
   max-width: 1920px;
   width: 102%;
   transform: translate(-1%);
+  border-radius: 10px;
+  padding-bottom: 30px;
 }
 
 article {
@@ -23,14 +25,24 @@ article {
   padding: 0.75rem;
   display: flex;
   flex-direction: column;
-  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
   z-index: 999;
+  overflow: hidden;
 }
 
 article:hover {
-  width: 420px;
-  transform: translateY(-14px);
+  background: rgba(190, 216, 160, 0.743);
+  background-color: #e9ecefd7;
+  transform: translateY(-4px);
   box-shadow: rgb(0 0 0 / 30%) -2px 2px 10px 3px;
+}
+
+.icon:hover {
+  transform: translateY(-16px);
+}
+
+.icon:hover img {
+  height: 40px;
 }
 
 .character-info {
@@ -43,7 +55,10 @@ article:hover {
 .character-info > span {
   font-size: 16px;
   font-weight: 500;
-  /* text-transform: capitalize; */
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .subtitle {
@@ -52,14 +67,6 @@ article:hover {
 .character-info > .divider {
   font-size: 16px;
   font-weight: 500;
-  text-transform: capitalize;
-}
-
-.status-indicator {
-  height: 10px;
-  width: 10px;
-  background-color: green;
-  border-radius: 50%;
 }
 
 .status-indicator-info {
@@ -76,7 +83,7 @@ h2 {
 
 .character-image {
   position: absolute;
-  height: 140px;
+  height: 120px;
   bottom: 18%;
   right: 0.75rem;
 }
@@ -103,10 +110,10 @@ a {
   color: #000;
   /* padding: .5rem; */
   padding: 1.5px;
-  /* border: 1px solid #000; */
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid rgba(60, 60, 60, 0.12);
   border-radius: 10px;
-  /* height: 90%; */
-  /* font-weight: 800; */
   width: fit-content;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -114,7 +121,34 @@ a {
 }
 
 a:hover {
-  /* background-color: rgb(159, 247, 218); */
   background-color: #000;
   color: #fff;
+}
+
+article > a:last-of-type {
+  background-color: unset;
+  border: unset;
+}
+article > a:last-of-type img {
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+article > a:last-of-type img:hover {
+  box-shadow: rgb(0 0 0 / 30%) -2px 2px 10px 3px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  border: 1px solid rgba(60, 60, 60, 0.6);
+}
+
+.icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 11rem;
+  color: #000;
+  cursor: pointer;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  z-index: 999;
+}
+
+.icon img {
+  height: 30px;
 }
