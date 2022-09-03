@@ -80,7 +80,7 @@ npm install <nombreDeLaDependencia>@versión
 
 
 ## Iniciar el servidor
-* Para iniciar el servidor en modo de desarrollo se hace con el comando: `npm run dev`, por defecto el puerto de desarrollo es `3001` pero se le puede pasar una bandera (flag) `--port` en la que se puede configurar el puerto indicando el número deseado:
+* Para iniciar el servidor en modo de desarrollo se hace con el comando: `npm run dev`, por defecto el puerto de desarrollo es `4200` en Angular, pero se le puede pasar una bandera (flag) `--port` en la que se puede configurar el puerto indicando el número deseado:
 
 ```markdown
 npm start
