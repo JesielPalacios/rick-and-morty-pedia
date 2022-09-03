@@ -32,13 +32,13 @@ export class CharactersService {
     // return this.http.get<Episode>(this.episodesUrl + idx);
     let episodesIdUrl = '';
 
-    function addEpisodeId(episode: any, i: any) {
-      if (episode[i].slice(-2).indexOf('/') != -1) {
-        episodesIdUrl += `,${episode[i].slice(-1)}`;
-      }
+    // function addEpisodeId(episode: any, i: any) {
+    //   if (episode[i].slice(-2).indexOf('/') != -1) {
+    //     episodesIdUrl += ',' + episode[i].slice(-1).toString();
+    //   }
 
-      episodesIdUrl += `,${episode[i].slice(-2)}`;
-    }
+    //   episodesIdUrl += `,${episode[i].slice(-2)}`;
+    // }
 
     // Loop for create the multiple episode url made with the episodes id.
     // Before the cycle or loop a function can be implemented and controlle
@@ -50,22 +50,22 @@ export class CharactersService {
       // without a colon simbol
       if (i === 0) {
         if (idx[i].slice(-2).indexOf('/') != -1) {
-          episodesIdUrl += `${idx[i].slice(-1)}`;
+          episodesIdUrl += idx[i].slice(-1).toString();
+        } else {
+          episodesIdUrl += idx[i].slice(-2).toString();
         }
-
-        episodesIdUrl += `${idx[i].slice(-2)}`;
       }
       // Otherwise add the first episode id on the url with a colon simbol
       // for purposes of the form or syntax in which the url of the multiple
       // episodes should be according to the Rick And Morthy api documentation:
       // https://rickandmortyapi.com/documentation/#get-multiple-episodes
-      // 
+      //
       else {
         if (idx[i].slice(-2).indexOf('/') != -1) {
-          episodesIdUrl += `${idx[i].slice(-1)}`;
+          episodesIdUrl += ',' + idx[i].slice(-1).toString();
+        } else {
+          episodesIdUrl += ',' + idx[i].slice(-2).toString();
         }
-
-        episodesIdUrl += `${idx[i].slice(-2)}`;
       }
     }
 
