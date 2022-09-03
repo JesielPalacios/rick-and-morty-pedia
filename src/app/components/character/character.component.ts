@@ -39,12 +39,6 @@ export class CharacterComponent implements OnInit {
             .subscribe(async (data) => {
               this.episodesData = await data;
             });
-
-          // this._charactersService
-          //   .getEpisodeById(this.character.lastEpisode)
-          //   .subscribe((data) => {
-          //     this.lastEpisodeData = data;
-          //   });
         });
     });
   }

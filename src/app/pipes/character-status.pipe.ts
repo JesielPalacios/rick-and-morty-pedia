@@ -106,9 +106,9 @@ export class CharacterLocationPipe implements PipeTransform {
 export class CharacterGenderPipe implements PipeTransform {
   transform(gender: string): string {
     if (gender.toLowerCase() === 'male') {
-      return 'Masculino🤴🏾';
+      return 'Masculino ♂️';
     } else if (gender.toLowerCase() === 'female') {
-      return 'Femenino👸🏾';
+      return 'Femenino ♀️';
     }
     return 'Desconocido🤷🏾‍♂️';
   }
@@ -118,12 +118,32 @@ export class CharacterGenderPipe implements PipeTransform {
   name: 'characterEpisodes',
 })
 export class CharacterEpisodesPipe implements PipeTransform {
-  transform(episodes: any): [] {
-    if (episodes.slice(-2).indexOf('/') != -1) {
-      return episodes.slice(-1);
+  transform(episode: any, key: string, episodeId: any): any {
+    let _episodeId;
+
+    if (episodeId.slice(-2).indexOf('/') != -1) {
+      _episodeId = episodeId.slice(-1);
+    } else {
+      _episodeId = episodeId.slice(-2);
     }
 
-    return episodes.slice(-2);
+    function transformData(episode: any) {
+      switch (key) {
+        case 'id':
+          return episode.id;
+        case 'name':
+          return episode.name;
+
+        default:
+          episode.name;
+      }
+    }
+
+    if (episode.length) {
+      return transformData(episode[_episodeId - 1]);
+    } else {
+      return transformData(episode);
+    }
   }
 }
 
@@ -132,7 +152,6 @@ export class CharacterEpisodesPipe implements PipeTransform {
 })
 export class CharacterLastEpisodePipe implements PipeTransform {
   transform(episode: any, key: string): any {
-    console.log(episode)
     let _episode;
 
     function transformData(episode: any) {
@@ -150,8 +169,8 @@ export class CharacterLastEpisodePipe implements PipeTransform {
     if (episode.length) {
       _episode = episode[episode.length - 1];
       return transformData(_episode);
+    } else {
+      return transformData(episode);
     }
-
-    return transformData(episode);
   }
 }

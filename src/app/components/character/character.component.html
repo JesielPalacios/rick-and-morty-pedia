@@ -9,7 +9,7 @@
     <article class="row">
       <div class="col-md-4">
         <div class="img-wrapper">
-          <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" srcset="" class="img-fluid">
+          <img src="{{character.image}}" alt="" srcset="" class="img-fluid">
         </div>
 
         <a [routerLink]="['/personajes']" class="btn btn-outline-danger btn-block">Regresar a personajes</a>
@@ -47,8 +47,6 @@
           <div class="character-info">
             Último episodio donde apareció:
             <span class="link">
-              <!-- #{{lastEpisodeData.id}}: {{lastEpisodeData.name}} -->
-
               #{{episodesData | characterLastEpisode: 'id'}}:
               {{episodesData| characterLastEpisode: 'name'}}
             </span>
@@ -56,16 +54,15 @@
 
           <div class="character-info">
             Todos los números de episodios en los que ha estado:
-            <span class="link" *ngFor="let episode of character.episode">
-              <!-- {{episodesData | characterEpisodes}} -->
-            </span>
+            <div class="character-info grid">
+              <a class="link" *ngFor="let episode of character.episode">
+                #{{episodesData | characterEpisodes: 'id' :episode}}:
+                {{episodesData| characterEpisodes: 'name' :episode}}
+              </a>
+            </div>
           </div>
 
         </div>
-        <!-- <div>
-          <img *ngIf="heroe.casa == 'Marvel'" class="img-logo" src="assets/img/marvel-logo.png" alt="DC">
-          <img *ngIf="heroe.casa == 'DC'" class="img-logo" src="assets/img/dc-logo.jpg" alt="Marvel">
-        </div> -->
       </div>
     </article>
   </section>
