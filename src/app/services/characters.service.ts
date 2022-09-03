@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Character } from '../model/character';
 import { CharacterInformation } from './../model/characterinformation';
+import { Location } from '../model/location';
 
 @Injectable({
   providedIn: 'root',
@@ -11,21 +12,21 @@ import { CharacterInformation } from './../model/characterinformation';
 export class CharactersService {
   characters: Character[] = [];
 
-  private charactersUrl = 'https://rickandmortyapi.com/api/character/';
+  private apiUrl = 'https://rickandmortyapi.com/api';
   private episodesUrl = 'https://rickandmortyapi.com/api/episode/';
 
   constructor(private http: HttpClient) {}
 
   getAllCharacters(): Observable<CharacterInformation> {
-    return this.http.get<CharacterInformation>(this.charactersUrl);
+    return this.http.get<CharacterInformation>(this.apiUrl + '/character');
   }
 
   getCharacterById(idx: string): Observable<Character> {
-    return this.http.get<Character>(this.charactersUrl + idx);
+    return this.http.get<Character>(this.apiUrl + '/character/' + idx);
   }
 
   getEpisodeById(idx: string): Observable<Episode> {
-    return this.http.get<Episode>(this.episodesUrl + idx);
+    return this.http.get<Episode>(this.apiUrl + '/episode/' + idx);
   }
 
   getMultipleEpisodesById(idx: string[]): Observable<Episode[]> {
@@ -64,12 +65,31 @@ export class CharactersService {
       }
     }
 
-    this.episodesUrl = '';
-    this.episodesUrl = 'https://rickandmortyapi.com/api/episode/';
-    this.episodesUrl += episodesIdUrl;
+    return this.http.get<Episode[]>(this.apiUrl + '/episode/' + episodesIdUrl);
+  }
 
-    // console.log(episodesIdUrl);
-    // console.log(this.episodesUrl);
-    return this.http.get<Episode[]>(this.episodesUrl);
+  getLocationById(idx: string): Observable<Location> {
+    return this.http.get<Location>(this.apiUrl + '/location/' + idx);
+  }
+
+  parseIdUrl(idx: any) {
+    let episodesIdUrl = '';
+
+    for (let i = 0; i < idx.length; i++) {
+      if (i === 0) {
+        episodesIdUrl += idx[i].slice(-3).replace('/', '').replace('r', '');
+      } else {
+        episodesIdUrl +=
+          ',' + idx[i].slice(-3).replace('/', '').replace('r', '');
+      }
+    }
+
+    return episodesIdUrl;
+  }
+
+  getMultipleCharactersById(idx: string[]): Observable<Character[]> {
+    return this.http.get<Character[]>(
+      this.apiUrl + '/character/' + this.parseIdUrl(idx)
+    );
   }
 }
