@@ -28,23 +28,16 @@ export class CharactersService {
     return this.http.get<Episode>(this.episodesUrl + idx);
   }
 
-  getMultipleEpisodesById(idx: any): Observable<any> {
-    // return this.http.get<Episode>(this.episodesUrl + idx);
+  getMultipleEpisodesById(idx: string[]): Observable<Episode[]> {
     let episodesIdUrl = '';
 
-    // function addEpisodeId(episode: any, i: any) {
-    //   if (episode[i].slice(-2).indexOf('/') != -1) {
-    //     episodesIdUrl += ',' + episode[i].slice(-1).toString();
-    //   }
-
-    //   episodesIdUrl += `,${episode[i].slice(-2)}`;
-    // }
-
     // Loop for create the multiple episode url made with the episodes id.
+
     // Before the cycle or loop a function can be implemented and controlle
     // with a conditional so that it adds the comma symbol when the first
     // interaction of the cycle / loop is not the first, but I think that
     // would make it more cumbersome / complicated.
+
     for (let i = 0; i < idx.length; i++) {
       // If its the first one iteration so add the first episode id on the url
       // without a colon simbol
@@ -69,8 +62,8 @@ export class CharactersService {
       }
     }
 
-    console.log(episodesIdUrl);
+    this.episodesUrl += episodesIdUrl;
 
-    return idx;
+    return this.http.get<Episode[]>(this.episodesUrl);
   }
 }
