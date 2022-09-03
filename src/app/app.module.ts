@@ -23,6 +23,7 @@ import {
   CharacterSpeciesPipe,
   CharacterLocationPipe,
   CharacterGenderPipe,
+  CharacterLastEpisodePipe,
   CharacterEpisodesPipe,
 } from './pipes/character-status.pipe';
 
@@ -41,6 +42,7 @@ import {
     CharacterSpeciesPipe,
     CharacterLocationPipe,
     CharacterGenderPipe,
+    CharacterLastEpisodePipe,
     CharacterEpisodesPipe,
   ],
   imports: [BrowserModule, APP_ROUTING, HttpClientModule],

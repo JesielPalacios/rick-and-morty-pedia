@@ -47,14 +47,17 @@
           <div class="character-info">
             Último episodio donde apareció:
             <span class="link">
-              #{{lastEpisodeData.id}}: {{lastEpisodeData.name}}
+              <!-- #{{lastEpisodeData.id}}: {{lastEpisodeData.name}} -->
+
+              #{{episodesData | characterLastEpisode: 'id'}}:
+              {{episodesData| characterLastEpisode: 'name'}}
             </span>
           </div>
 
           <div class="character-info">
             Todos los números de episodios en los que ha estado:
             <span class="link" *ngFor="let episode of character.episode">
-              {{episode | characterEpisodes}}
+              <!-- {{episodesData | characterEpisodes}} -->
             </span>
           </div>
 

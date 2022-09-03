@@ -126,3 +126,32 @@ export class CharacterEpisodesPipe implements PipeTransform {
     return episodes.slice(-2);
   }
 }
+
+@Pipe({
+  name: 'characterLastEpisode',
+})
+export class CharacterLastEpisodePipe implements PipeTransform {
+  transform(episode: any, key: string): any {
+    console.log(episode)
+    let _episode;
+
+    function transformData(episode: any) {
+      switch (key) {
+        case 'id':
+          return episode.id;
+        case 'name':
+          return episode.name;
+
+        default:
+          episode.name;
+      }
+    }
+
+    if (episode.length) {
+      _episode = episode[episode.length - 1];
+      return transformData(_episode);
+    }
+
+    return transformData(episode);
+  }
+}

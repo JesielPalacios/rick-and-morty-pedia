@@ -37,10 +37,7 @@ export class CharacterComponent implements OnInit {
           this._charactersService
             .getMultipleEpisodesById(this.character.episode)
             .subscribe(async (data) => {
-              // console.log(data);
               this.episodesData = await data;
-              // console.log(this.episodesData);
-              // console.log(this.character);
             });
 
           // this._charactersService
