@@ -183,25 +183,25 @@ export class CharacterLastEpisodePipe implements PipeTransform {
   name: 'characterLocationUrl',
 })
 export class CharacterLocationUrlPipe implements PipeTransform {
-  // transform(location: any, key?: any): any {
-  //   if (location) {
-  //     return 'ubicacion/' + getIdFromUrl(location);
-  //   } else if (key === true) {
-  //     return 'personaje/' + getIdFromUrl(location);
-  //   } else {
-  //     return 'personajes';
-  //   }
-  // }
   transform(location: any, key?: any): any {
-    for (let i = 0; i < location.length; i++) {
-      const element = location[i];
-    }
-
-    if (location.slice(-3).indexOf('/') != -1) {
-      return location.slice(-3).replace('/', '').replace('r', '');
+    if (location) {
+      return 'ubicacion/' + getIdFromUrl(location);
+    } else if (key === true) {
+      return 'personaje/' + getIdFromUrl(location);
     } else {
-      return location.slice(-3);
+      return 'personajes';
     }
-    return location;
   }
+  // transform(location: any, key?: any): any {
+  //   for (let i = 0; i < location.length; i++) {
+  //     const element = location[i];
+  //   }
+
+  //   if (location.slice(-3).indexOf('/') != -1) {
+  //     return location.slice(-3).replace('/', '').replace('r', '');
+  //   } else {
+  //     return location.slice(-3);
+  //   }
+  //   return location;
+  // }
 }

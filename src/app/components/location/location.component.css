@@ -57,16 +57,25 @@ a:hover,
 }
 
 .grid {
+  width: 100%;
   /* width: 100%; */
 
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
 
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
   /* flex-wrap: wrap; */
   grid-column-gap: 5px;
+
+  /* display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1920px; */
 }
 
 .link {
@@ -77,6 +86,7 @@ a:hover,
   width: 95%;
   padding: 10px;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .img-wrapper > img {

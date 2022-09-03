@@ -7,36 +7,34 @@
 
   <section class="wrapper animated fadeIn fast">
     <article class="row">
-      <div class="col-md-8">
-        <h2>{{location.name}}</h2>
-        <hr>
+      <div class="row">
+        <div class="col-md-8">
 
-        <div class="col-md-12">
-          <div class="flex flex-dir-col">
+          <h2>{{location.name}}</h2>
+        </div>
+        <div class="col-md-4">
 
-            <div class="flex alig-center">
-              Tipo de ubicación/localización: <span>{{location.type}}</span>
-            </div>
-
-            <div class="flex alig-center">
-              Dimensión: <span>{{location.dimension | characterLocation}}</span>
-            </div>
-
-            Residentes:
-            <div class="character-info grid">
-              <a class="link" *ngFor="let currentLocation of location.residents"
-                href="{{location.residents | characterLocationUrl: 'true'}}">
-                <!-- #{{location.residents | characterEpisodes: 'id' :episode}}: -->
-                <!-- {{location.residents| characterEpisodes: 'name' :episode}} -->
-                {{currentLocation | characterLocationUrl}}
-              </a>
-            </div>
-          </div>
+          <a [routerLink]="['/personajes']" class="btn btn-outline-dark btn-block">Ir a los personajes</a>
         </div>
       </div>
+      <hr>
 
-      <div class="col-md-4">
-        <a [routerLink]="['/personajes']" class="btn btn-outline-dark btn-block">Ir a los personajes</a>
+      <div class="flex flex-dir-col">
+
+        <div class="flex alig-center">
+          Tipo de ubicación/localización: <span>{{location.type}}</span>
+        </div>
+
+        <div class="flex alig-center">
+          Dimensión: <span>{{location.dimension | characterLocation}}</span>
+        </div>
+
+        Residentes:
+        <div class="character-info grid">
+          <a class="link" *ngFor="let character of characters" routerLink="/personaje/{{character.id}}">
+            id: #{{character.id}} - {{character.name}}
+          </a>
+        </div>
       </div>
     </article>
   </section>
