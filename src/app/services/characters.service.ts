@@ -41,6 +41,8 @@ export class CharactersService {
     for (let i = 0; i < idx.length; i++) {
       // If its the first one iteration so add the first episode id on the url
       // without a colon simbol
+      // console.log(i);
+      // console.log(idx);
       if (i === 0) {
         if (idx[i].slice(-2).indexOf('/') != -1) {
           episodesIdUrl += idx[i].slice(-1).toString();
@@ -62,8 +64,12 @@ export class CharactersService {
       }
     }
 
+    this.episodesUrl = '';
+    this.episodesUrl = 'https://rickandmortyapi.com/api/episode/';
     this.episodesUrl += episodesIdUrl;
 
+    // console.log(episodesIdUrl);
+    // console.log(this.episodesUrl);
     return this.http.get<Episode[]>(this.episodesUrl);
   }
 }

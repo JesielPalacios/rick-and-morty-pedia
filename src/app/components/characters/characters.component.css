@@ -35,7 +35,7 @@ article:hover {
   background: rgba(190, 216, 160, 0.743);
   background-color: #e9ecefd7;
   width: 420px;
-  transform: translateY(-14px);
+  transform: translateY(-4px);
   box-shadow: rgb(0 0 0 / 30%) -2px 2px 10px 3px;
 }
 
