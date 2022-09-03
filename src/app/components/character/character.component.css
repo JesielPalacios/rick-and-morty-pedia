@@ -56,15 +56,11 @@ a:hover,
   color: #fff;
 }
 
-
 .grid {
   /* width: 100%; */
 
-
   display: grid;
-  grid-template-columns:repeat(2, 1fr);
-  
-
+  grid-template-columns: repeat(2, 1fr);
 
   /* display: flex; */
   /* justify-content: center; */
@@ -73,8 +69,17 @@ a:hover,
   grid-column-gap: 5px;
 }
 
-
 .link {
   display: block;
   margin: 20px;
+}
+.btn-block {
+  width: 95%;
+  padding: 10px;
+  text-align: center;
+}
+
+.img-wrapper > img {
+  width: 100%;
+  margin-bottom: 30px;
 }
