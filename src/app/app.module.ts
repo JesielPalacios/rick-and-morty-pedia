@@ -15,6 +15,8 @@ import { HomeComponent } from './components/home/home.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { CharacterComponent } from './components/character/character.component';
+import { LocationComponent } from './components/location/location.component';
+import { FavComponent } from './components/shared/fav/fav.component';
 
 // Pipes
 import {
@@ -27,7 +29,6 @@ import {
   CharacterEpisodesPipe,
   CharacterLocationUrlPipe,
 } from './pipes/character-status.pipe';
-import { LocationComponent } from './components/location/location.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,8 @@ import { LocationComponent } from './components/location/location.component';
     CharactersComponent,
     CharacterComponent,
     FooterComponent,
+    LocationComponent,
+    FavComponent,
     // Pipes
     CharacterStatusIconPipe,
     CharacterStatusPipe,
@@ -46,7 +49,6 @@ import { LocationComponent } from './components/location/location.component';
     CharacterGenderPipe,
     CharacterLastEpisodePipe,
     CharacterEpisodesPipe,
-    LocationComponent,
     CharacterLocationUrlPipe,
   ],
   imports: [BrowserModule, APP_ROUTING, HttpClientModule],
