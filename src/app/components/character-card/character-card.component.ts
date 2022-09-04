@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CharacterCardComponent implements OnInit {
   toggle: boolean = true;
-  @Input('characters') character: Character = <Character>{};
+  @Input('character') character: Character = <Character>{};
 
   constructor(private _charactersService: CharactersService) {}
 
