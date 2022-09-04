@@ -6,7 +6,7 @@
   <hr class="my-4">
 
   <section class="wrapper animated fadeIn fast">
-    <article *ngFor="let character of characters">
+    <!-- <article *ngFor="let character of characters">
       <div class="character-info">
         <div class="divider">
           <h2><a routerLink="/personaje/{{character.id}}"><b>{{character.name}}</b></a></h2>
@@ -40,7 +40,8 @@
         <img *ngIf="!isFav(character.id)" src="../../../assets/heart-regular.svg" alt="" srcset="">
         <img *ngIf="isFav(character.id)" src="../../../assets/heart-solid.svg" alt="" srcset="">
       </span>
-    </article>
+    </article> -->
+    <app-character-card *ngFor="let character of characters" [characters]="character" class="card"></app-character-card>
   </section>
   <hr class="my-4">
 </main>

@@ -1,6 +1,8 @@
 # RickAndMortyPedia
 
-Bienvenid@, este es el proyecto frontend en Angular que consume  la API Rest Full (aunque también soporta GraphQL) [Rick And Morthy](https://rickandmortyapi.com/documentation)
+Bienvenid@, este es el proyecto frontend en Angular que consume  la API Rest Full de [Rick And Morthy](https://rickandmortyapi.com/documentation)
+
+Podrás ver listados todos los personajes, así como información detallada de cada personaje, e información detallada de todas las ubicaciones y sus residentes.
 
 ## Información relevante
 Esta es una API Rest Full desarrollada con con al versión estable de Node.js #14
@@ -108,18 +110,18 @@ npm run build
 
 
 ## Correr pruebas
-* Para correr las diferentes pruebas del proyecto: `npm run tests`
+* Para correr las diferentes pruebas del proyecto: `ng test`
 
 ```markdown
-npm run tests
+ng test
 ```
 
 
 
 ## Contacto
-Esto ha sido todo por ahora, muchas gracias por tu interés en este proyecto, si necesitas alguna información adicional, soporte, reporte de errores, pull requests (PRs), donarme un cafesito puedes contactarme al correo: jesielvirtualsa@gmail.com
+Esto ha sido todo por ahora, muchas gracias por su interés en este proyecto, si necesita alguna información adicional, soporte, reporte de errores, pull requests (PRs), donarme un cafesito puede contactarme al correo: jesielvirtualsa@gmail.com
 
-También puede visitarne en LinkedIn:
+También puede visitar mi perfil de LinkedIn:
 * https://www.linkedin.com/in/jesiel-palacios-co/
 
 Y portafolio web de mis proyectos:
@@ -127,35 +129,9 @@ Y portafolio web de mis proyectos:
 
 
 <br>
-Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 14.2.1.
 
 <br>
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-
-Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 14.2.1.
 
 ## Servidor de desarrollo
 
