@@ -13,6 +13,7 @@ export class LocationComponent implements OnInit {
   id: Number = 1;
   characters = new Array<Character>();
   location: Location = <Location>{};
+  // charactersLength = this.characters.length;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,13 +24,12 @@ export class LocationComponent implements OnInit {
 
       this._charactersService
         .getLocationById(params['locationId'])
-        .subscribe(async (data) => {
+        .subscribe((data) => {
           this.location = data;
 
           this._charactersService
             .getMultipleCharactersById(this.location.residents)
-            .subscribe(async (data) => {
-              console.log(data)
+            .subscribe((data) => {
               this.characters = data;
             });
         });

@@ -13,10 +13,7 @@ export class CharacterCardComponent implements OnInit {
 
   constructor(private _charactersService: CharactersService) {}
 
-  ngOnInit(): void {
-    console.log('this.characters');
-    console.log(this.character);
-  }
+  ngOnInit(): void {}
 
   addFav(key: any, value: any) {
     if (this.toggle) {

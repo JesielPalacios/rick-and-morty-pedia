@@ -29,10 +29,13 @@
           Dimensión: <span>{{location.dimension | characterLocation}}</span>
         </div>
 
-        Residentes:
-        <div class="character-info grid">
-          <app-character-card *ngFor="let character of characters" [character]="character" class="card">
-          </app-character-card>
+        <div>
+          Esta ubicación/lugar tiene un total de: <span>{{characters.length}} residentes</span>
+          <section class="wrapper animated fadeIn fast">
+            <app-character-card *ngFor="let character of characters" [character]="character" class="card">
+            </app-character-card>
+          </section>
+
         </div>
       </div>
     </article>
