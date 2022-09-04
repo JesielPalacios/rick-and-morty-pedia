@@ -29,7 +29,12 @@
   </a>
 
   <span (click)="addFav(character.id, character.name)" class="icon" aria-label="Fav Character" role="img">
-    <img *ngIf="!isFav(character.id)" src="../../../assets/heart-regular.svg" alt="" srcset="">
-    <img *ngIf="isFav(character.id)" src="../../../assets/heart-solid.svg" alt="" srcset="">
+
+    <img *ngIf="!isFav(character.id)" src="../../../assets/heart-regular.svg"
+      alt="Icon that mean you like this character, click for like" role="svg" srcset="">
+
+    <img *ngIf="isFav(character.id)" src="../../../assets/heart-solid.svg"
+      alt="iIon that mean you don't like this character, click for unlike" srcset="">
+
   </span>
 </article>
