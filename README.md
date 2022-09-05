@@ -4,7 +4,7 @@ Bienvenid@, este es el proyecto frontend en Angular que consume la API Rest Full
 
 [Puede ver la app completa en este enlace](rick-and-morty-pedia-jesielpalacios.vercel.app): https://rick-and-morty-pedia-jesielpalacios.vercel.app
 
-[![featured image of the web application](src/assets/featured.png)](https://rick-and-morty-pedia.vercel.ap)
+[![featured image of the web application](src/assets/featured.png)](https://rick-and-morty-pedia.vercel.app)
 
 Podrás ver listados todos los personajes, así como información detallada de cada personaje, e información detallada de todas las ubicaciones y sus residentes.
 
