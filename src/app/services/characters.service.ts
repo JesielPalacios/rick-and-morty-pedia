@@ -11,13 +11,14 @@ import { Location } from '../model/location';
 })
 export class CharactersService {
   characters: Character[] = [];
+  page: Number = 42;
 
   private apiUrl = 'https://rickandmortyapi.com/api';
 
   constructor(private http: HttpClient) {}
 
-  getAllCharacters(): Observable<CharacterInformation> {
-    return this.http.get<CharacterInformation>(this.apiUrl + '/character');
+  getAllCharacters(page: Number): Observable<CharacterInformation> {
+    return this.http.get<CharacterInformation>(this.apiUrl + '/character/'+ '?page='+page);
   }
 
   getCharacterById(idx: string): Observable<Character> {

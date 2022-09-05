@@ -9,12 +9,41 @@ import { Character } from 'src/app/model/character';
 })
 export class CharactersComponent implements OnInit {
   characters = new Array<Character>();
+  page: number = 1;
 
   constructor(private _charactersService: CharactersService) {}
 
   ngOnInit(): void {
-    this._charactersService.getAllCharacters().subscribe(({ results }: any) => {
-      this.characters = results;
-    });
+    this._charactersService
+      .getAllCharacters(this.page)
+      .subscribe(({ results }: any) => {
+        this.characters = results;
+      });
+  }
+
+  nextPage() {
+    if (this.page <= 41) {
+      this.page += 1;
+      console.log(this.page);
+
+      this._charactersService
+        .getAllCharacters(this.page)
+        .subscribe(({ results }: any) => {
+          this.characters = results;
+        });
+    }
+  }
+
+  previoustPage() {
+    if (this.page >= 2) {
+      this.page -= 1;
+      console.log(this.page);
+
+      this._charactersService
+        .getAllCharacters(this.page)
+        .subscribe(({ results }: any) => {
+          this.characters = results;
+        });
+    }
   }
 }

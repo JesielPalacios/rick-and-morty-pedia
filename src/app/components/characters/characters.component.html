@@ -5,8 +5,24 @@
   </section>
   <hr class="my-4">
 
+  <div class="row margin-bottom">
+    <div class="col-md-7">
+<h2>Página {{page}} de 42</h2>
+    </div>
+    <div class="col-md-5 buttons">
+      <button class="btn btn-outline-dark" role="button" (click)="previoustPage()">
+        <i class='bx bx-skip-previous-circle'></i>
+        Personajes anteriores
+      </button>
+      <button class="btn btn-outline-dark" role="button" (click)="nextPage()">
+        Personajes siguientes
+        <i class='bx bx-skip-next-circle'></i>
+      </button>
+    </div>
+  </div>
+
   <section class="wrapper animated fadeIn fast">
-      <app-character-card *ngFor="let character of characters" [character]="character" class="card"></app-character-card>
+    <app-character-card *ngFor="let character of characters" [character]="character" class="card"></app-character-card>
   </section>
   <hr class="my-4">
 </main>
