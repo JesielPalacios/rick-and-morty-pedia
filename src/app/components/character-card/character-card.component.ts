@@ -1,4 +1,3 @@
-import { CharactersService } from 'src/app/services/characters.service';
 import { Character } from 'src/app/model/character';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -8,24 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./character-card.component.css'],
 })
 export class CharacterCardComponent implements OnInit {
-  toggle: boolean = true;
-  @Input('character') character: Character = <Character>{};
+  @Input() character: any = {};
 
-  constructor(private _charactersService: CharactersService) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-  addFav(key: any, value: any) {
-    if (this.toggle) {
-      this._charactersService.saveFav(key, value);
-      this.toggle = !this.toggle;
-    } else {
-      this._charactersService.removeFav(key);
-      this.toggle = !this.toggle;
-    }
-  }
-
-  isFav(key: any) {
-    return this._charactersService.getFav(key);
-  }
 }

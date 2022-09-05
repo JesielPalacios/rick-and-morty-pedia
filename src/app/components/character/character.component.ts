@@ -11,7 +11,7 @@ import { Episode } from 'src/app/model/episode';
 })
 export class CharacterComponent implements OnInit {
   character: Character = <Character>{};
-  id: Number = 6;
+  id: Number = 10;
   lastEpisodeData: Episode = <Episode>{};
   episodesData = new Array<Episode>();
 

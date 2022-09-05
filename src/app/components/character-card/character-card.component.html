@@ -1,7 +1,7 @@
 <article class="card">
   <div class="character-info">
     <div class="divider">
-      <h2><a routerLink="/personaje/{{character.id}}"><b>{{character.name}}</b></a></h2>
+      <h2><a routerLink="/personaje/{{character.id}}"><b>{{character.id}} - {{character.name}}</b></a></h2>
       <span class="status-indicator-info">
         <b [ngClass]="character.status | characterStatusIcon"></b>
         <span>{{character.status | characterStatus: character.gender}}</span> -
@@ -28,13 +28,5 @@
     </div>
   </a>
 
-  <span (click)="addFav(character.id, character.name)" class="icon" aria-label="Fav Character" role="img">
-
-    <img *ngIf="!isFav(character.id)" src="../../../assets/heart-regular.svg"
-      alt="Icon that mean you like this character, click for like" role="svg" srcset="">
-
-    <img *ngIf="isFav(character.id)" src="../../../assets/heart-solid.svg"
-      alt="iIon that mean you don't like this character, click for unlike" srcset="">
-
-  </span>
+  <app-fav [character]="character" class="icon-position"></app-fav>
 </article>

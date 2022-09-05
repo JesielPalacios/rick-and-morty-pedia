@@ -1,0 +1,10 @@
+.icon {
+  color: #000;
+  cursor: pointer;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  z-index: 999;
+}
+
+.icon img {
+  height: 30px;
+}

@@ -1,6 +1,6 @@
 <main class="jumbotron">
   <section class="animated fadeIn">
-    <h2 class="display-4">Personaje #{{id}}| Rick&MortyPedia</h2>
+    <h2 class="display-4">Personaje - {{id}}| Rick&MortyPedia</h2>
     <p class="lead">A continuación toda la información referente a tu personaje, todo desde tu plataforma
       favorita <b>Rick&MortyPedia</b>!</p>
     <hr class="my-4">
@@ -12,11 +12,18 @@
           <img src="{{character.image}}" alt="" srcset="" class="img-fluid">
         </div>
         <a [routerLink]="['/personajes']" class="btn btn-outline-dark btn-block">Ir a los personajes</a>
-
       </div>
 
       <div class="col-md-8">
-        <h3>{{character.name}}</h3>
+        <div class="row">
+          <div class="col-md-11">
+            <h3>{{character.name}}</h3>
+          </div>
+
+          <div class="col-md-1">
+            <app-fav [character]="character"></app-fav>
+          </div>
+        </div>
         <hr>
         <div class="flex flex-dir-col">
 
@@ -42,23 +49,23 @@
 
           <div class="character-info">
             Visto por primera vez en:
-            <a routerLink="/{{character.origin.url | characterLocationUrl}}" class="capitalize">{{character.origin.name |
-              characterLocation}}</a>
+            <a routerLink="/{{character.origin.url | characterLocationUrl}}" class="capitalize">{{character.origin.name
+              | characterLocation}}</a>
           </div>
 
           <div class="character-info">
             Último episodio donde apareció:
             <span class="link">
-              #{{episodesData | characterLastEpisode: 'id'}}:
+              {{episodesData | characterLastEpisode: 'id'}}:
               {{episodesData| characterLastEpisode: 'name'}}
             </span>
           </div>
 
           <div class="character-info">
-            Todos los números de episodios en los que ha estado:
+            Todos los episodios en los que ha estado:
             <div class="character-info grid">
               <a class="link" *ngFor="let episode of character.episode">
-                #{{episodesData | characterEpisodes: 'id' :episode}}:
+                {{episodesData | characterEpisodes: 'id' :episode}}:
                 {{episodesData| characterEpisodes: 'name' :episode}}
               </a>
             </div>

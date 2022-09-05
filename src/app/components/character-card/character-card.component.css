@@ -1,4 +1,3 @@
-
 article {
   position: relative;
   width: 416px;
@@ -128,16 +127,8 @@ article > a:last-of-type img:hover {
   border: 1px solid rgba(60, 60, 60, 0.6);
 }
 
-.icon {
+.icon-position {
   position: absolute;
   right: 0.75rem;
   top: 11rem;
-  color: #000;
-  cursor: pointer;
-  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
-  z-index: 999;
-}
-
-.icon img {
-  height: 30px;
 }

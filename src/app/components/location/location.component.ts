@@ -10,10 +10,10 @@ import { Character } from 'src/app/model/character';
   styleUrls: ['./location.component.css'],
 })
 export class LocationComponent implements OnInit {
-  id: Number = 1;
+  id: Number = 2;
   characters = new Array<Character>();
   location: Location = <Location>{};
-  // charactersLength = this.characters.length;
+  length: Number = 0;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -30,7 +30,9 @@ export class LocationComponent implements OnInit {
           this._charactersService
             .getMultipleCharactersById(this.location.residents)
             .subscribe((data) => {
+              // console.log(data)
               this.characters = data;
+              this.length = this.characters.length;
             });
         });
     });
