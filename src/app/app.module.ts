@@ -16,6 +16,8 @@ import { CharactersComponent } from './components/characters/characters.componen
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { CharacterComponent } from './components/character/character.component';
 import { LocationComponent } from './components/location/location.component';
+import { CharacterCardComponent } from './components/character-card/character-card.component';
+import { FavComponent } from './components/shared/fav/fav.component';
 
 // Pipes
 import {
@@ -39,6 +41,8 @@ import {
     CharacterComponent,
     FooterComponent,
     LocationComponent,
+    CharacterCardComponent,
+    FavComponent,
     // Pipes
     CharacterStatusIconPipe,
     CharacterStatusPipe,

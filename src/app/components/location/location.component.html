@@ -1,6 +1,6 @@
 <main class="jumbotron">
   <section class="animated fadeIn">
-    <h2 class="display-4">Ubicación #{{id}} | Rick&MortyPedia</h2>
+    <h2 class="display-4">Ubicación - {{id}} | Rick&MortyPedia</h2>
     <p class="lead">Aquí en Rick&MortyPedia también te mostramos información de la <b>ubicación</b>!</p>
   </section>
   <hr class="my-4">
@@ -29,11 +29,21 @@
           Dimensión: <span>{{location.dimension | characterLocation}}</span>
         </div>
 
-        Residentes:
-        <div class="character-info grid">
-          <a class="link" *ngFor="let character of characters" routerLink="/personaje/{{character.id}}">
-            id: #{{character.id}} - {{character.name}}
-          </a>
+        <div>
+          Esta ubicación/lugar tiene un total de: <span>{{characters.length}} residentes</span>
+          <div *ngIf="length > -1">
+            <section class="wrapper animated fadeIn fast">
+              <app-character-card *ngFor="let character of characters" [character]="character" class="card">
+              </app-character-card>
+            </section>
+          </div>
+          <div *ngIf="!length">
+            <section class="wrapper animated fadeIn fast">
+              <app-character-card [character]="characters" class="card">
+              </app-character-card>
+            </section>
+          </div>
+
         </div>
       </div>
     </article>

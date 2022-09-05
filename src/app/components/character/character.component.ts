@@ -11,7 +11,7 @@ import { Episode } from 'src/app/model/episode';
 })
 export class CharacterComponent implements OnInit {
   character: Character = <Character>{};
-  id: Number = 6;
+  id: Number = 10;
   lastEpisodeData: Episode = <Episode>{};
   episodesData = new Array<Episode>();
 
@@ -24,7 +24,7 @@ export class CharacterComponent implements OnInit {
 
       this._charactersService
         .getCharacterById(params['characterId'])
-        .subscribe(async (data) => {
+        .subscribe((data) => {
           this.character = data;
           this.character.lastEpisode =
             this.character.episode[this.character.episode.length - 1];
@@ -36,8 +36,8 @@ export class CharacterComponent implements OnInit {
 
           this._charactersService
             .getMultipleEpisodesById(this.character.episode)
-            .subscribe(async (data) => {
-              this.episodesData = await data;
+            .subscribe((data) => {
+              this.episodesData = data;
             });
         });
     });

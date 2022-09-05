@@ -10,18 +10,20 @@
   color: #333;
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   /* padding-bottom: 50px; */
   height: 100vh;
 }
 
-.main-container{
+.main-container {
   margin-top: 20px;
 }
 
@@ -47,6 +49,18 @@ body{
   transform: translate(-6.5%);
 } */
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1920px;
+  width: 102%;
+  transform: translate(-1%);
+  border-radius: 10px;
+  padding-bottom: 30px;
+}
+
 b {
   font-weight: 600;
 }
@@ -57,17 +71,15 @@ b {
   border-radius: 50%;
 }
 
-
 .alive {
   background-color: rgb(51, 191, 0);
 }
 .dead {
-  background-color: #d63d2e;
+  background-color: #ff0000;
 }
 .unknown {
   background-color: rgb(131, 131, 131);
 }
-
 
 /* Animaciones */
 .animated {
