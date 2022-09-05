@@ -134,15 +134,16 @@ ng test
 
 Esto ha sido todo por ahora, muchas gracias por su interés en este proyecto, si necesita alguna información adicional, soporte, reporte de errores, pull requests (PRs), donarme un cafesito puede contactarme al correo: jesielvirtualsa@gmail.com
 
-También puede visitar mi perfil de LinkedIn:
+También puede visitar [mi perfil de LinkedIn](https://www.linkedin.com/in/jesiel-palacios-co/):
 
 - https://www.linkedin.com/in/jesiel-palacios-co/
 
-Y portafolio web de mis proyectos:
+Y portafolio web de [mis proyectos](https://jesielpalacios.github.io/):
 
 - https://jesielpalacios.github.io/
 
 <br>
+
 Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 14.2.1.
 
 <br>
